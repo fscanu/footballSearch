@@ -8,10 +8,6 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /\.css$/,
-        loader: "style-loader!css-loader"
-      },
-      {
         exclude: /node_modules/,
         loader: "babel",
         query: {
@@ -21,7 +17,7 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ["", ".js", ".jsx", ".css"]
+    extensions: ["", ".js", ".jsx"]
   },
   devServer: {
     historyApiFallback: true,
