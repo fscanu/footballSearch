@@ -3,10 +3,10 @@ const { PropTypes } = React;
 import iconPaths from "./selection.js"; // the file exported from IcoMoon
 
 function getPath(iconName) {
-  const icon = iconPaths.icons.find(icon => icon.properties.name === iconName);
+  const icon = iconPaths.icons.find(icon => icon.tags.includes(iconName));
 
   if (icon) {
-    return icon.icon.paths.join(" ");
+    return icon.paths.join(" ");
   } else {
     console.warn(`icon ${iconName} does not exist.`);
     return "";

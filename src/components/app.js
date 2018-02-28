@@ -45,7 +45,7 @@ export default class App extends Component {
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">FootballPlayerSearch</h1>
-          <Icon icon="facebook" />
+          <Icon icon="home" />
         </header>
         <SearchBar onSearchTermChange={this.footballApiQuery} />
         <TeamList teams={this.state.teams} />
