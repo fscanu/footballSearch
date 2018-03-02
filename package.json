@@ -1,12 +1,15 @@
 {
-  "name": "redux-simple-starter",
+  "name": "footballSearch",
   "version": "1.0.0",
-  "description": "Simple starter package for Redux with React and Babel support",
+  "description":
+    "A simple react app created as an exercise to understand the concept of the Stephen Grider course on React",
   "main": "index.js",
-  "repository": "git@github.com:StephenGrider/ReduxSimpleStarter.git",
+  "repository": "git@github.com:fscanu/footballSearch.git",
   "scripts": {
-    "start": "nodemon ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
-    "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",
+    "start":
+      "nodemon ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+    "test":
+      "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",
     "test:watch": "npm run test -- --watch"
   },
   "author": "",
