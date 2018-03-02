@@ -1,6 +1,6 @@
 # FootballSearch
 
-A simple react app create as an exercise to understand the concept of the Stephen Grider course https://www.udemy.com/react-redux/learn/v4/overview
+A simple react app created as an exercise to understand the concept of the Stephen Grider course https://www.udemy.com/react-redux/learn/v4/overview
 
 #### Familiar with Git?
 
