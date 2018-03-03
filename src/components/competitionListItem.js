@@ -3,8 +3,6 @@ import React, { Component } from "react";
 export default class CompetitionListItem extends Component {
   constructor(props) {
     super(props);
-
-    console.log(props);
     this.state = {};
     console.log("inside the item constructor", props.competition.id);
   }

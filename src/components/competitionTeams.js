@@ -10,10 +10,6 @@ class CompetitionTeams extends Component {
             teamsForCompetition: [],
             teamList: ""
         };
-        console.log(
-            "inside the teamsForCompetition:",
-            props.competitionSelected.id
-        );
         this.retrieveTeamsForCompetition(props.competitionSelected.id);
     }
 
