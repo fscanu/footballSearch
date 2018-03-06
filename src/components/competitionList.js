@@ -3,11 +3,6 @@ import CompetitionListItem from "./competitionListItem";
 
 const CompetitionList = props => {
   const competitions = props.competitionList.map(competition => {
-    console.log(
-      "inside the iterator: props.onCompetitionSelected",
-      props.onCompetitionSelected
-    );
-
     return (
       <CompetitionListItem
         onCompetitionSelected={props.onCompetitionSelected}

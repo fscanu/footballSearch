@@ -1,15 +1,18 @@
 {
-  "name": "footballSearch",
+  "name": "footballsearch",
   "version": "1.0.0",
   "description": "A simple react app created as an exercise to understand the concept of the Stephen Grider course on React",
   "main": "index.js",
-  "repository": "git@github.com:fscanu/footballSearch.git",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/fscanu/footballSearch.git"
+  },
   "scripts": {
     "start": "nodemon ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",
     "test:watch": "npm run test -- --watch"
   },
-  "author": "",
+  "author": "fscanu",
   "license": "ISC",
   "devDependencies": {
     "axios": "^0.18.0",
@@ -38,5 +41,16 @@
     "react-router": "^2.0.1",
     "redux": "^3.0.4",
     "style-loader": "^0.20.2"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/fscanu/footballSearch/issues"
+  },
+  "homepage": "https://github.com/fscanu/footballSearch#readme",
+  "directories": {
+    "test": "test"
+  },
+  "keywords": [
+    "football",
+    "search"
+  ]
 }
