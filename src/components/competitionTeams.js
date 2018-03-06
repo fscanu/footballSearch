@@ -7,14 +7,15 @@ class CompetitionTeams extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      teamsForCompetition: [],
       teamList: ""
     };
     this.retrieveTeamsForCompetition(props.competitionSelected.id);
   }
+
   componentWillReceiveProps(nextProps) {
     this.retrieveTeamsForCompetition(nextProps.competitionSelected.id);
   }
+  
   retrieveTeamsForCompetition = competId => {
     var config = {
       headers: {
@@ -33,7 +34,6 @@ class CompetitionTeams extends Component {
     Axios.get(url, config)
       .then(response => {
         this.setState({
-          teamsForCompetition: response.data.teams,
           teamsList: response.data.teams.map(team => {
             return (
               <li key={team.code} className="list-group-item">
