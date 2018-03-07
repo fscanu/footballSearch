@@ -15,7 +15,7 @@ class CompetitionTeams extends Component {
   componentWillReceiveProps(nextProps) {
     this.retrieveTeamsForCompetition(nextProps.competitionSelected.id);
   }
-  
+
   retrieveTeamsForCompetition = competId => {
     var config = {
       headers: {
@@ -36,7 +36,7 @@ class CompetitionTeams extends Component {
         this.setState({
           teamsList: response.data.teams.map(team => {
             return (
-              <li key={team.code} className="list-group-item">
+              <li key={team.name} className="list-group-item">
                 <div className="team-list media">
                   <div className="media-left">{team.name}</div>
                 </div>

@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import SearchBar from "./search-bar";
-import CompetitionTeams from "./competitionTeams";
+import TeamList from "./teamList";
 import CompetitionList from "./competitionList";
 import Axios from "axios";
-import _ from "lodash";
 
 import Icon from "./icons/icon";
 import Selection from "./icons/selection";
@@ -62,7 +61,6 @@ export default class App extends Component {
           <h1 className="App-title">FootballPlayerSearch</h1>
           <Icon icon="search" />
         </header>
-        {/* <SearchBar onSearchTermChange={retrieveTeamsForCompetition} /> */}
         <CompetitionList
           competitionList={this.state.competitionList}
           onCompetitionSelected={selectedCompetition =>
@@ -71,9 +69,7 @@ export default class App extends Component {
             })
           }
         />
-        <CompetitionTeams
-          competitionSelected={this.state.selectedCompetition}
-        />
+        <TeamList competitionSelected={this.state.selectedCompetition} />
       </div>
     );
   }
