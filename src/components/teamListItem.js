@@ -1,13 +1,13 @@
 import React from "react";
 
-const teamListItem = props => {
+const TeamListItem = ({ team, onTeamSelected }) => {
   return (
-    <ul>
-      <li>player 1</li>
-      <li>player 2</li>
-      <li>player 3</li>
-    </ul>
+    <li onClick={() => onTeamSelected(team)} className="list-group-item">
+      <div className="team-list media">
+        <div className="media-left">{team.name}</div>
+      </div>
+    </li>
   );
 };
 
-export default teamListItem;
+export default TeamListItem;

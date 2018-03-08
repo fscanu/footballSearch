@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import Axios from "axios";
-
-const API_KEY = "50093249883d485893ad7ccb840c9738";
+import TeamListItem from "./teamListItem";
+import * as Const from "../../constants/constants";
 
 class CompetitionTeams extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      teamList: ""
+      teamList: "",
+      selectedTeam: null
     };
     this.retrieveTeamsForCompetition(props.competitionSelected.id);
   }
@@ -19,7 +20,7 @@ class CompetitionTeams extends Component {
   retrieveTeamsForCompetition = competId => {
     var config = {
       headers: {
-        "X-Auth-Token": API_KEY
+        "X-Auth-Token": Const.API_KEY
       }
     };
 
@@ -27,7 +28,7 @@ class CompetitionTeams extends Component {
 
     var config = {
       headers: {
-        "X-Auth-Token": API_KEY
+        "X-Auth-Token": Const.API_KEY
       }
     };
 
@@ -36,11 +37,15 @@ class CompetitionTeams extends Component {
         this.setState({
           teamsList: response.data.teams.map(team => {
             return (
-              <li key={team.name} className="list-group-item">
-                <div className="team-list media">
-                  <div className="media-left">{team.name}</div>
-                </div>
-              </li>
+              <TeamListItem
+                onTeamSelected={selectedTeam =>
+                  this.setState({
+                    selectedTeam
+                  })
+                }
+                key={team.name}
+                team={team}
+              />
             );
           })
         });

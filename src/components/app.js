@@ -1,14 +1,12 @@
 import React, { Component } from "react";
+import Axios from "axios";
+
 import SearchBar from "./search-bar";
 import TeamList from "./teamList";
 import CompetitionList from "./competitionList";
-import Axios from "axios";
 
 import Icon from "./icons/icon";
-import Selection from "./icons/selection";
-import { ICONS } from "../../constants/constants";
-
-const API_KEY = "50093249883d485893ad7ccb840c9738";
+import * as Const from "../../constants/constants";
 
 export default class App extends Component {
   constructor(props) {
@@ -27,7 +25,7 @@ export default class App extends Component {
 
     var config = {
       headers: {
-        "X-Auth-Token": API_KEY
+        "X-Auth-Token": Const.API_KEY
       }
     };
 
