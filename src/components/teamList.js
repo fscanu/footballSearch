@@ -25,16 +25,11 @@ class CompetitionTeams extends Component {
 
     const url = `http://api.football-data.org/v1/competitions/${competId}/teams`;
 
-    var config = {
-      headers: {
-        "X-Auth-Token": Const.API_KEY
-      }
-    };
-
     Axios.get(url, config)
       .then(response => {
         this.setState({
           teamsList: response.data.teams.map(team => {
+            console.log(team._links.self.href);
             return (
               <TeamListItem
                 onTeamSelected={this.props.onTeamSelected}
