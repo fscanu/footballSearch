@@ -1,14 +1,13 @@
 import React, { Component } from "react";
 import Axios from "axios";
 import TeamListItem from "./teamListItem";
-import * as Const from "../../constants/constants";
+import * as Const from "./constants/constants";
 
 class CompetitionTeams extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      teamList: "",
-      selectedTeam: null
+      teamList: ""
     };
     this.retrieveTeamsForCompetition(props.competitionSelected.id);
   }
@@ -38,11 +37,7 @@ class CompetitionTeams extends Component {
           teamsList: response.data.teams.map(team => {
             return (
               <TeamListItem
-                onTeamSelected={selectedTeam =>
-                  this.setState({
-                    selectedTeam
-                  })
-                }
+                onTeamSelected={this.props.onTeamSelected}
                 key={team.name}
                 team={team}
               />
